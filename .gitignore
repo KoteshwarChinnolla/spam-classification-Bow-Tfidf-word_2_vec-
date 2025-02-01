@@ -1,0 +1,6 @@
+spam_class/
+.vscode/
+combined_data.csv
+train_data.csv
+test_data.csv
+model_w2v.pkl
