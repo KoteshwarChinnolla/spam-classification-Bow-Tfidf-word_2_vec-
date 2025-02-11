@@ -22,6 +22,8 @@ The goal is to understand the reason and know in depth theory behand every techn
 
 ## this are some of my observations Regarding accuracy
 
+### BAG OF WORDS
+
 > In Bag of Words representation we consider entire text as a corpus. finding out unique words out of corpus. the unique words basically known to be vocabulary.
 
 > Considering all vocabulary( let say size of vocabulary is 1000) of the entire text and then we assign index to each word (token) alphabetically.
@@ -30,4 +32,13 @@ The goal is to understand the reason and know in depth theory behand every techn
 
  example -- "I have a pen, I use this pen for writing" let say this is the text. now we are creating vector to it !!
  At index position 'I' it is initially 0 then we make it 2 . then 'have' to 1, 'a' to 1,'pen' to 2 etc... this index positions are related to corpus of text.
- 
+
+ Major disadvantages of using Bag Of words is that 
+ > Sparsity in terms of huge vocabulary ( think of a case where you have 10000 unique words , now every sentence has to be represented in 10000 dimensions)
+ > Can't handle words wich are out of the Vocabulary (OOV)
+ > Symantic meaning not captured ( Importance of word in the sentence)
+
+Ways of making it more efficient 
+#### using N-grams
+N grams is basically considering n words togather and assigning it a separate index. in this way it can understand the importance of words occurring togather but disadvantages will remain same.
+
