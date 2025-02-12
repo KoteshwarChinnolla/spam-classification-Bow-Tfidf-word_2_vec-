@@ -66,38 +66,44 @@ In TFIDF importance is captured in two ways **term frequency** and **Inverse Doc
 
 Term frequency focus on reputation of that perticular word in that sentence.
 
-\documentclass{article}
-\usepackage{amsmath}
+so Term frequency of a word t in a sentence s is given by
 
-\begin{document}
+$$
+TF(t, d) = \frac{\text{Number of times term } t \text{ appears in sentence } s}{\text{Total number of terms in sentence } s}
+$$
 
-\section*{Term Frequency and Inverse Document Frequency}
+term frequency of a word is callculated for every sentence. it is not dependent on the Corpus. it discribes the importance of the word in the sentence. 
 
-\textbf{Term Frequency (TF):} The term frequency of a term t in a document d is given by:
+#### Inverse Document Frequency (IDF)
 
-\[
-TF(t, d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
-\]
+Inverse document frequency focusses on the entire corpus, it calculate in number of sentences word t appeared. imagine if lesser the time the word appears the more unique it is and more importance is given to that word.
 
-\textbf{Inverse Document Frequency (IDF):} The inverse document frequency of a term t is given by:
 
-\[
+The **Inverse Document Frequency (IDF)** of a term t is given by:
+
+$$
 IDF(t) = \log \left( \frac{N}{DF(t)} \right)
-\]
+$$
 
 where:
-\begin{itemize}
-    \item N is the total number of documents in the corpus.
-    \item DF(t) is the number of documents that contain the term t.
-\end{itemize}
+- N is the total number of documents in the corpus.
+- DF(t) is the number of documents that contain the term t.
 
-\textbf{TF-IDF:} The TF-IDF score is computed as:
+IDF of a word is calculated by considering the whole corpus.so we take a word from vocabulary and chaeck for number of sentences had that word. we calculate the IDF value and assign it for that perticular word. this Vslue will be usefull when we reach out that word in a sentence. as it is constant for entire document for a vocabulary.
 
-\[
+if we are appearing a sentence such as "Boy looks good" in such a case we take the idf score of Boy wich is already calculated and TF of boy is 1/3 (Frequency of Boy in the sentence is 1 and total words in the sentence is 3) multiplie both.
+
+
+The **TF-IDF** score is calculated as:
+
+$$
 TF\text{-}IDF(t, d) = TF(t, d) \times IDF(t)
-\]
+$$
 
-\end{document}
+TF-IDF is widely used in **text mining** and **information retrieval** to measure the importance of a term in a document relative to a collection of documents.
 
+**Disadvantages of TF-IDF**
+> 1. Symatic meaning is still not captured ( contextual meaning)
+> 2. sparcity (length of each vector will be large for large carpus)
 
 
