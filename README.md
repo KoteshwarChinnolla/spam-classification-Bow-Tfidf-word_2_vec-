@@ -100,10 +100,16 @@ $$
 TF\text{-}IDF(t, d) = TF(t, d) \times IDF(t)
 $$
 
+vectors are generated in a way we consider entire vocabulary, in a sentence for each word we calculate tfidf and the value will be then placed at the index of word in the entire vocablery. it that way the words wich are present in the sentence eil have a value atvthe index in the vocabulary and remaining values will be 0. the vector of size vocablery is genrated.
+
 TF-IDF is widely used in **text mining** and **information retrieval** to measure the importance of a term in a document relative to a collection of documents.
 
 **Disadvantages of TF-IDF**
 > 1. Symatic meaning is still not captured ( contextual meaning)
 > 2. sparcity (length of each vector will be large for large carpus)
+
+## Word to Vec
+
+
 
 
